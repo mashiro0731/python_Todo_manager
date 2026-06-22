@@ -78,3 +78,13 @@ def test_task_manager_complete_task():
 
     assert manager.complete_task("코딩") is True
     assert task.completed is True
+
+def test_find_nonexistent_task():
+    manager = TaskManager()
+
+    assert manager.find_task("없는 작업") is None
+
+def test_remove_nonexistent_task():
+    manager = TaskManager()
+
+    assert manager.remove_task("없는 작업") is False
